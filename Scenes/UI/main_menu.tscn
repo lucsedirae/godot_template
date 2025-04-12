@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://wviy8lkdbjjn"]
+[gd_scene load_steps=5 format=3 uid="uid://wviy8lkdbjjn"]
 
 [ext_resource type="Script" uid="uid://d3rm5vk0uk44o" path="res://Scripts/UI/main_menu.gd" id="1_5wsvm"]
 [ext_resource type="Theme" uid="uid://p4dl2meguj4t" path="res://Assets/Themes/main_theme.tres" id="1_i2xx2"]
+[ext_resource type="Script" uid="uid://pmkby7ycf85j" path="res://Scripts/UI/input_controller.gd" id="3_o14dv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i2xx2"]
 font_size = 46
@@ -24,6 +25,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="InputController" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_o14dv")
 
 [node name="MenuContainer" type="Control" parent="."]
 layout_mode = 1
