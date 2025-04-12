@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://wviy8lkdbjjn"]
+[gd_scene load_steps=4 format=3 uid="uid://wviy8lkdbjjn"]
 
 [ext_resource type="Script" uid="uid://d3rm5vk0uk44o" path="res://Scripts/UI/main_menu.gd" id="1_5wsvm"]
+[ext_resource type="Theme" uid="uid://p4dl2meguj4t" path="res://Assets/Themes/main_theme.tres" id="1_i2xx2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i2xx2"]
+font_size = 46
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -9,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_i2xx2")
 script = ExtResource("1_5wsvm")
 
 [node name="Background" type="ColorRect" parent="."]
@@ -19,3 +24,49 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="MenuContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.5
+offset_top = -78.5
+offset_right = 111.5
+offset_bottom = 78.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="MenuContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_i2xx2")
+text = "Main Menu"
+label_settings = SubResource("LabelSettings_i2xx2")
+
+[node name="NewGameButton" type="Button" parent="MenuContainer/VBoxContainer"]
+layout_mode = 2
+text = "New game"
+
+[node name="LoadGameButton" type="Button" parent="MenuContainer/VBoxContainer"]
+layout_mode = 2
+text = "Load game"
+
+[node name="OptionsButton" type="Button" parent="MenuContainer/VBoxContainer"]
+layout_mode = 2
+text = "Options"
