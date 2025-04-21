@@ -1,11 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://2a0wpidsa088"]
+[gd_scene load_steps=3 format=3 uid="uid://2a0wpidsa088"]
 
 [ext_resource type="Script" uid="uid://bkqdyktkc5yur" path="res://Scenes/Ships/Carrack/ship_interior_carrack.gd" id="1_i310c"]
+[ext_resource type="PackedScene" uid="uid://dtvknio8gptit" path="res://Scenes/Ships/Carrack/model.tscn" id="2_gtcb3"]
 
 [node name="Ship Interior - Carrack" type="Node3D"]
 script = ExtResource("1_i310c")
 
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "TESTING"
+[node name="ship_interior" parent="." instance=ExtResource("2_gtcb3")]

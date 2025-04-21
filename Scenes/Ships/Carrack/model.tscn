@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtvknio8gptit"]
+
+[ext_resource type="PackedScene" uid="uid://bbu387vm87tid" path="res://Scenes/Ships/Carrack/Assets/ship_interior.glb" id="1_gqndm"]
+
+[node name="ship_interior" instance=ExtResource("1_gqndm")]
