@@ -1,5 +1,5 @@
-# UI/main_menu.gd
-extends Control
+# Scenes/Ships/Carrack/ship_interior_carracks.gd
+extends Node3D
 
 const SCENE_NAME = "main menu"
 

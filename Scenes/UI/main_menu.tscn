@@ -77,3 +77,5 @@ text = "Load game"
 [node name="OptionsButton" type="Button" parent="MenuContainer/VBoxContainer"]
 layout_mode = 2
 text = "Options"
+
+[connection signal="pressed" from="MenuContainer/VBoxContainer/NewGameButton" to="InputController" method="_on_new_game_button_pressed"]
