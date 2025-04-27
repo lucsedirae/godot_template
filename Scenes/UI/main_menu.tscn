@@ -1,9 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://wviy8lkdbjjn"]
+[gd_scene load_steps=12 format=3 uid="uid://wviy8lkdbjjn"]
 
 [ext_resource type="Script" uid="uid://d3rm5vk0uk44o" path="res://Scripts/UI/main_menu.gd" id="1_5wsvm"]
 [ext_resource type="Theme" uid="uid://p4dl2meguj4t" path="res://Assets/Themes/main_theme.tres" id="1_i2xx2"]
 [ext_resource type="Script" uid="uid://pmkby7ycf85j" path="res://Scripts/UI/input_controller.gd" id="3_o14dv"]
 [ext_resource type="AudioStream" uid="uid://dv0u2g0gu8kb2" path="res://Assets/Audio/WIP_pirate_attack.ogg" id="4_u7lva"]
+[ext_resource type="Script" uid="uid://rojre0bt6qog" path="res://Scenes/UI/menu_box.gd" id="4_wqme5"]
+[ext_resource type="Texture2D" uid="uid://048wsh0xo3yb" path="res://Scenes/UI/Assets/Cloud/cloud.svg" id="5_4pqbp"]
+[ext_resource type="Script" uid="uid://u8qkomitjmrl" path="res://Scenes/UI/Assets/Cloud/cloud.gd" id="6_gih0s"]
+[ext_resource type="Texture2D" uid="uid://bduwkb4e2stxu" path="res://Scenes/UI/Assets/EnemyShip/enemy_ship.svg" id="7_k33u3"]
+[ext_resource type="Script" uid="uid://bygp06cr4ijhc" path="res://Scenes/UI/Assets/EnemyShip/enemy_ship.gd" id="8_lrjdf"]
+[ext_resource type="Script" uid="uid://b1osj6n2t63ak" path="res://Scenes/UI/game_title.gd" id="9_lrjdf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i2xx2"]
 font_size = 46
@@ -25,7 +31,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.552941, 0.419608, 0.580392, 1)
 
 [node name="InputController" type="Control" parent="."]
 anchors_preset = 0
@@ -47,7 +53,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuContainer"]
+[node name="MenuBox" type="VBoxContainer" parent="MenuContainer"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -60,26 +66,57 @@ offset_right = 111.5
 offset_bottom = 78.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("4_wqme5")
 
-[node name="TitleLabel" type="Label" parent="MenuContainer/VBoxContainer"]
+[node name="TitleLabel" type="Label" parent="MenuContainer/MenuBox"]
 layout_mode = 2
 theme = ExtResource("1_i2xx2")
 text = "Main Menu"
 label_settings = SubResource("LabelSettings_i2xx2")
 
-[node name="NewGameButton" type="Button" parent="MenuContainer/VBoxContainer"]
+[node name="NewGameButton" type="Button" parent="MenuContainer/MenuBox"]
 layout_mode = 2
 text = "New game"
 
-[node name="LoadGameButton" type="Button" parent="MenuContainer/VBoxContainer"]
+[node name="LoadGameButton" type="Button" parent="MenuContainer/MenuBox"]
 layout_mode = 2
 text = "Load game"
 
-[node name="OptionsButton" type="Button" parent="MenuContainer/VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="MenuContainer/MenuBox"]
 layout_mode = 2
 text = "Options"
 
 [node name="BackgroundBoombox" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_u7lva")
 
-[connection signal="pressed" from="MenuContainer/VBoxContainer/NewGameButton" to="InputController" method="_on_new_game_button_pressed"]
+[node name="Cloud" type="Sprite2D" parent="."]
+position = Vector2(-300, 180)
+texture = ExtResource("5_4pqbp")
+script = ExtResource("6_gih0s")
+speed = 80
+
+[node name="Cloud2" type="Sprite2D" parent="."]
+position = Vector2(-1802, 284)
+texture = ExtResource("5_4pqbp")
+script = ExtResource("6_gih0s")
+speed = 150
+
+[node name="EnemyShip" type="Sprite2D" parent="."]
+position = Vector2(-981, 403)
+texture = ExtResource("7_k33u3")
+script = ExtResource("8_lrjdf")
+speed = 150
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = -1404.0
+offset_top = 171.0
+offset_right = -705.0
+offset_bottom = 332.0
+theme = ExtResource("1_i2xx2")
+theme_override_colors/default_color = Color(0.65098, 0.788235, 0.741176, 1)
+theme_override_font_sizes/normal_font_size = 120
+text = "Cloudharbor"
+script = ExtResource("9_lrjdf")
+
+[connection signal="pressed" from="MenuContainer/MenuBox/NewGameButton" to="InputController" method="_on_new_game_button_pressed"]

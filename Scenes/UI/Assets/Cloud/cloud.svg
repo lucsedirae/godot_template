@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cloud shape with fill color #d1e3dd -->
+  <path fill="#d1e3dd" stroke="#a5c3bd" stroke-width="3" d="
+    M320,140
+    c0,-33.1 -26.9,-60 -60,-60
+    c-5.5,0 -10.9,0.8 -16,2.2
+    c-12.2,-25.3 -38.1,-42.7 -68,-42.7
+    c-41.4,0 -75,33.6 -75,75
+    c0,3.7 0.3,7.3 0.8,10.8
+    c-21.2,9.7 -36,31.1 -36,55.9
+    c0,33.9 27.6,61.5 61.5,61.5
+    h175.3
+    c25.5,0 46.2,-20.7 46.2,-46.2
+    C348.8,165.4 337.1,147.2 320,140
+    z" />
+  
+  <!-- Subtle highlight effects -->
+  <ellipse cx="200" cy="120" rx="90" ry="25" fill="#e8f3ef" fill-opacity="0.5" />
+</svg>

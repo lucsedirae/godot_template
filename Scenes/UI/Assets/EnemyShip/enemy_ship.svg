@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background - transparent -->
+  <rect width="800" height="600" fill="none"/>
+  
+  <!-- Ship hull (Inverted pirate ship style) -->
+  <path d="M250,300 
+           C270,295 290,290 310,288
+           L310,250 L490,250 L490,288
+           C510,290 530,295 550,300 
+           L570,350 C500,330 300,330 230,350 Z" fill="#22181C"/>
+  
+  <!-- Ship bow (pointy front) -->
+  <path d="M310,288 L285,270 L270,250 L310,250 Z" fill="#22181C"/>
+  
+  <!-- Ship stern (raised back) -->
+  <path d="M490,288 L490,250 L530,250 L515,270 Z" fill="#22181C"/>
+  
+  <!-- Ship deck details -->
+  <rect x="290" y="270" width="220" height="5" fill="#22181C"/>
+  
+  <!-- Railing -->
+  <path d="M320,265 L480,265" stroke="#312F2F" stroke-width="2" fill="none"/>
+  <path d="M320,265 L320,250" stroke="#312F2F" stroke-width="2" fill="none"/>
+  <path d="M340,265 L340,250" stroke="#312F2F" stroke-width="2" fill="none"/>
+  <path d="M360,265 L360,250" stroke="#312F2F" stroke-width="2" fill="none"/>
+  <path d="M380,265 L380,250" stroke="#312F2F" stroke-width="2" fill="none"/>
+  <path d="M400,265 L400,250" stroke="#312F2F" stroke-width="2" fill="none"/>
+  <path d="M420,265 L420,250" stroke="#312F2F" stroke-width="2" fill="none"/>
+  <path d="M440,265 L440,250" stroke="#312F2F" stroke-width="2" fill="none"/>
+  <path d="M460,265 L460,250" stroke="#312F2F" stroke-width="2" fill="none"/>
+  <path d="M480,265 L480,250" stroke="#312F2F" stroke-width="2" fill="none"/>
+  
+  <!-- Large dirigible balloon on top - now closer to hull -->
+  <ellipse cx="400" cy="150" rx="300" ry="100" fill="#312F2F"/>
+  <ellipse cx="400" cy="150" rx="290" ry="90" fill="none" stroke="#22181C" stroke-width="2"/>
+  <ellipse cx="400" cy="150" rx="270" ry="80" fill="none" stroke="#22181C" stroke-width="1"/>
+  
+  <!-- Smaller dirigible balloons - now closer to hull -->
+  <ellipse cx="250" cy="180" rx="100" ry="50" fill="#312F2F"/>
+  <ellipse cx="550" cy="180" rx="100" ry="50" fill="#312F2F"/>
+  
+  <!-- Connecting cables/ropes from balloons to ship - shorter now -->
+  <line x1="250" y1="230" x2="300" y2="250" stroke="#22181C" stroke-width="2"/>
+  <line x1="400" y1="250" x2="400" y2="250" stroke="#22181C" stroke-width="2"/>
+  <line x1="550" y1="230" x2="500" y2="250" stroke="#22181C" stroke-width="2"/>
+  <line x1="300" y1="230" x2="330" y2="250" stroke="#22181C" stroke-width="1.5"/>
+  <line x1="500" y1="230" x2="470" y2="250" stroke="#22181C" stroke-width="1.5"/>
+  
+  <!-- Additional rope connections since there are no masts -->
+  <line x1="350" y1="220" x2="350" y2="250" stroke="#22181C" stroke-width="1.5"/>
+  <line x1="400" y1="220" x2="400" y2="250" stroke="#22181C" stroke-width="1.5"/>
+  <line x1="450" y1="220" x2="450" y2="250" stroke="#22181C" stroke-width="1.5"/>
+  
+  <!-- Small details (portholes) -->
+  <circle cx="300" cy="310" r="3" fill="#D62828"/>
+  <circle cx="340" cy="310" r="3" fill="#D62828"/>
+  <circle cx="380" cy="310" r="3" fill="#D62828"/>
+  <circle cx="420" cy="310" r="3" fill="#D62828"/>
+  <circle cx="460" cy="310" r="3" fill="#D62828"/>
+  <circle cx="500" cy="310" r="3" fill="#D62828"/>
+  
+  <!-- Simple flag post without the flag -->
+  <rect x="400" y="220" width="5" height="50" fill="#22181C"/>
+</svg>
