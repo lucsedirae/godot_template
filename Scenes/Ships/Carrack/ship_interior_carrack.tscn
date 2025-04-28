@@ -1,9 +1,90 @@
-[gd_scene load_steps=3 format=3 uid="uid://2a0wpidsa088"]
+[gd_scene load_steps=4 format=3 uid="uid://2a0wpidsa088"]
 
 [ext_resource type="Script" uid="uid://bkqdyktkc5yur" path="res://Scenes/Ships/Carrack/ship_interior_carrack.gd" id="1_i310c"]
 [ext_resource type="PackedScene" uid="uid://dtvknio8gptit" path="res://Scenes/Ships/Carrack/model.tscn" id="2_gtcb3"]
+
+[sub_resource type="Environment" id="Environment_gtcb3"]
 
 [node name="Ship Interior - Carrack" type="Node3D"]
 script = ExtResource("1_i310c")
 
 [node name="ship_interior" parent="." instance=ExtResource("2_gtcb3")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9, 4, 0)
+fov = 50.9
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gtcb3")
+
+[node name="Underdeck Ambient Lantern" type="SpotLight3D" parent="."]
+transform = Transform3D(0.273137, 0.0186018, -0.961795, 0.961975, -0.00528166, 0.273086, 3.42685e-10, -0.999813, -0.0193371, -1.69689, 2.39995, -5.89691)
+light_color = Color(1, 0.568627, 0.419608, 1)
+light_energy = 3.0
+light_indirect_energy = 50.0
+light_volumetric_fog_energy = 2.0
+light_size = 0.317
+light_specular = 6.0
+
+[node name="Underdeck Ambient Lantern3" type="SpotLight3D" parent="."]
+transform = Transform3D(0.273137, 0.0186018, -0.961795, 0.961975, -0.00528166, 0.273086, 3.42685e-10, -0.999813, -0.0193371, -1.69689, 2.39995, 5.7374)
+light_color = Color(1, 0.568627, 0.419608, 1)
+light_energy = 3.0
+light_indirect_energy = 50.0
+light_volumetric_fog_energy = 2.0
+light_size = 0.317
+light_specular = 6.0
+
+[node name="Underdeck Ambient Spot" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.107705, 0.911463, 0.397032, 0.961975, -0.00528164, 0.273086, 0.251004, 0.411348, -0.876236, 2.33462, 3.79054, 1.10617)
+light_color = Color(1, 0.568627, 0.419608, 1)
+light_energy = 3.0
+light_indirect_energy = 50.0
+light_volumetric_fog_energy = 2.0
+light_size = 0.317
+light_specular = 6.0
+spot_range = 7.892
+spot_attenuation = 0.27
+spot_angle = 62.56
+
+[node name="Underdeck Ambient Spot3" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.272261, -0.0985173, 0.957167, 0.961975, -0.00528166, 0.273086, -0.0218482, 0.995121, 0.0962092, 5.99942, 3.79054, -0.0298257)
+light_color = Color(1, 0.568627, 0.419608, 1)
+light_energy = 3.0
+light_indirect_energy = 50.0
+light_volumetric_fog_energy = 2.0
+light_size = 0.317
+light_specular = 6.0
+spot_range = 7.892
+spot_attenuation = 0.27
+spot_angle = 62.56
+
+[node name="Underdeck Ambient Spot2" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.230251, -0.553513, 0.80038, 0.961975, -0.00528165, 0.273086, -0.146929, 0.832824, 0.533682, 2.33462, 3.79054, -1.60617)
+light_color = Color(1, 0.568627, 0.419608, 1)
+light_energy = 3.0
+light_indirect_energy = 50.0
+light_volumetric_fog_energy = 2.0
+light_size = 0.317
+light_specular = 6.0
+spot_range = 7.892
+spot_attenuation = 0.27
+spot_angle = 62.56
+
+[node name="Underdeck Ambient Lantern5" type="SpotLight3D" parent="."]
+transform = Transform3D(0.0914894, 0.948288, -0.303941, -0.543661, 0.303285, 0.782593, 0.834304, 0.093642, 0.543294, 0.355197, 3.79054, -0.916293)
+light_color = Color(1, 0.568627, 0.419608, 1)
+light_energy = 3.0
+light_indirect_energy = 50.0
+light_volumetric_fog_energy = 2.0
+light_size = 0.317
+light_specular = 6.0
+
+[node name="Underdeck Ambient Lantern2" type="SpotLight3D" parent="."]
+transform = Transform3D(0.273137, 0.0186018, -0.961795, 0.961975, -0.00528166, 0.273086, 3.42685e-10, -0.999813, -0.0193371, -1.69689, 2.39995, 0.0293803)
+light_color = Color(1, 0.568627, 0.419608, 1)
+light_energy = 3.0
+light_indirect_energy = 50.0
+light_volumetric_fog_energy = 2.0
+light_size = 0.317
+light_specular = 6.0

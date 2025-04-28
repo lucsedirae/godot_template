@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://wviy8lkdbjjn"]
+[gd_scene load_steps=13 format=3 uid="uid://wviy8lkdbjjn"]
 
 [ext_resource type="Script" uid="uid://d3rm5vk0uk44o" path="res://Scripts/UI/main_menu.gd" id="1_5wsvm"]
 [ext_resource type="Theme" uid="uid://p4dl2meguj4t" path="res://Assets/Themes/main_theme.tres" id="1_i2xx2"]
@@ -6,13 +6,12 @@
 [ext_resource type="AudioStream" uid="uid://dv0u2g0gu8kb2" path="res://Assets/Audio/WIP_pirate_attack.ogg" id="4_u7lva"]
 [ext_resource type="Script" uid="uid://rojre0bt6qog" path="res://Scenes/UI/menu_box.gd" id="4_wqme5"]
 [ext_resource type="Texture2D" uid="uid://048wsh0xo3yb" path="res://Scenes/UI/Assets/Cloud/cloud.svg" id="5_4pqbp"]
+[ext_resource type="Script" uid="uid://csd3i68hygkln" path="res://Scenes/UI/Assets/Audio/ui_boombox.gd" id="6_cejvf"]
 [ext_resource type="Script" uid="uid://u8qkomitjmrl" path="res://Scenes/UI/Assets/Cloud/cloud.gd" id="6_gih0s"]
 [ext_resource type="Texture2D" uid="uid://bduwkb4e2stxu" path="res://Scenes/UI/Assets/EnemyShip/enemy_ship.svg" id="7_k33u3"]
+[ext_resource type="Script" uid="uid://bg8c8msd4jx8g" path="res://Scenes/UI/Assets/Cloud/dark_cloud.gd" id="8_jewm6"]
 [ext_resource type="Script" uid="uid://bygp06cr4ijhc" path="res://Scenes/UI/Assets/EnemyShip/enemy_ship.gd" id="8_lrjdf"]
 [ext_resource type="Script" uid="uid://b1osj6n2t63ak" path="res://Scenes/UI/game_title.gd" id="9_lrjdf"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_i2xx2"]
-font_size = 46
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -68,12 +67,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_wqme5")
 
-[node name="TitleLabel" type="Label" parent="MenuContainer/MenuBox"]
-layout_mode = 2
-theme = ExtResource("1_i2xx2")
-text = "Main Menu"
-label_settings = SubResource("LabelSettings_i2xx2")
-
 [node name="NewGameButton" type="Button" parent="MenuContainer/MenuBox"]
 layout_mode = 2
 text = "New game"
@@ -89,11 +82,20 @@ text = "Options"
 [node name="BackgroundBoombox" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_u7lva")
 
+[node name="UIBoombox" type="AudioStreamPlayer" parent="."]
+script = ExtResource("6_cejvf")
+
 [node name="Cloud" type="Sprite2D" parent="."]
 position = Vector2(-300, 180)
 texture = ExtResource("5_4pqbp")
 script = ExtResource("6_gih0s")
 speed = 80
+
+[node name="DarkCloud" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-48, 643)
+texture = ExtResource("5_4pqbp")
+script = ExtResource("8_jewm6")
 
 [node name="Cloud2" type="Sprite2D" parent="."]
 position = Vector2(-1802, 284)
@@ -119,4 +121,7 @@ theme_override_font_sizes/normal_font_size = 120
 text = "Cloudharbor"
 script = ExtResource("9_lrjdf")
 
+[connection signal="mouse_entered" from="MenuContainer/MenuBox/NewGameButton" to="UIBoombox" method="_on_new_game_button_mouse_entered"]
 [connection signal="pressed" from="MenuContainer/MenuBox/NewGameButton" to="InputController" method="_on_new_game_button_pressed"]
+[connection signal="mouse_entered" from="MenuContainer/MenuBox/LoadGameButton" to="UIBoombox" method="_on_load_game_button_mouse_entered"]
+[connection signal="mouse_entered" from="MenuContainer/MenuBox/OptionsButton" to="UIBoombox" method="_on_options_button_mouse_entered"]

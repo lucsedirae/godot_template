@@ -1,11 +1,13 @@
 # UI/menu_box.gd
 extends VBoxContainer
 
+@onready var boombox = $"../../UIBoombox"
+
 # Duration of the fade-in animation in seconds
 @export var fade_duration = 1.0
 
 # Menu delay duration in seconds.
-@export var wait_time: float = 2.0
+@export var wait_time: float = 4.0
 
 var is_menu_visible: bool = false
 
